@@ -37,6 +37,7 @@ D:\合耀科技官网主页
 主要文件：
 
 - `index.html`：官网首页结构
+- `privacy.html`：隐私政策页面
 - `styles.css`：页面样式、响应式布局和动效
 - `script.js`：微信号复制、表单提交、滚动入场动画
 - `functions/api/lead.js`：Cloudflare Pages Function，接收表单并转发飞书
@@ -177,6 +178,7 @@ FEISHU_WEBHOOK
 - 完成 Cloudflare Pages 部署
 - 完成飞书机器人通知接入
 - 完成飞书表单通知测试
+- 完成隐私政策页面和入口
 
 ## 后续建议
 
@@ -184,7 +186,6 @@ FEISHU_WEBHOOK
 
 - 替换高清透明 PNG 或 SVG Logo
 - 添加微信二维码弹窗
-- 添加隐私政策页面
 - 补充 favicon 和社交分享图
 - 购买并绑定正式域名
 - 完成 ICP 备案后迁移到国内部署

@@ -258,6 +258,11 @@ h3 {
   line-height: 1.7;
 }
 
+.privacy-note a,
+.footer a {
+  color: var(--cyan);
+}
+
 .hero-visual {
   position: relative;
   min-height: 560px;
@@ -491,6 +496,50 @@ textarea:focus {
   border-top: 1px solid var(--line);
 }
 
+.policy {
+  min-height: calc(100vh - 130px);
+}
+
+.policy-panel {
+  max-width: 920px;
+  padding: 42px;
+  border: 1px solid rgba(109, 246, 255, 0.24);
+  border-radius: var(--radius);
+  background: rgba(5, 17, 22, 0.84);
+  box-shadow: var(--shadow);
+}
+
+.policy-panel h1 {
+  margin-bottom: 12px;
+  font-size: clamp(38px, 5vw, 62px);
+}
+
+.policy-updated {
+  margin-bottom: 34px;
+  color: var(--muted);
+}
+
+.policy-block {
+  padding: 24px 0;
+  border-top: 1px solid var(--line);
+}
+
+.policy-block h2 {
+  margin-bottom: 12px;
+  font-size: 24px;
+}
+
+.policy-block p {
+  margin-bottom: 0;
+  color: #bfd3d9;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.policy-back {
+  margin-top: 24px;
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(22px);
@@ -599,5 +648,9 @@ textarea:focus {
   .footer {
     flex-direction: column;
     width: min(100% - 24px, 1180px);
+  }
+
+  .policy-panel {
+    padding: 24px;
   }
 }

@@ -5,6 +5,7 @@
 ## 文件结构
 
 - `index.html`：首页结构和页面内容
+- `privacy.html`：隐私政策页面
 - `styles.css`：视觉样式、响应式布局和动画
 - `script.js`：微信号复制、表单提示、滚动入场动画
 - `functions/api/lead.js`：Cloudflare Pages 表单接口，转发官网咨询到飞书机器人
