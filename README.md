@@ -10,6 +10,7 @@
 - `functions/api/lead.js`：Cloudflare Pages 表单接口，转发官网咨询到飞书机器人
 - `assets/heyao-logo.jpg`：从现有品牌图中裁切的临时 Logo
 - `assets/brand-source.jpg`：原始品牌截图备份
+- `docs/project-knowledge-base.md`：项目上下文知识库
 
 ## 本地预览
 
