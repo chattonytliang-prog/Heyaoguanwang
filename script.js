@@ -50,19 +50,43 @@ wechatButton?.addEventListener("click", async () => {
   }, 2400);
 });
 
-form?.addEventListener("submit", (event) => {
+form?.addEventListener("submit", async (event) => {
   event.preventDefault();
 
   const formData = new FormData(form);
   const name = String(formData.get("name") || "").trim();
   const contact = String(formData.get("contact") || "").trim();
   const type = String(formData.get("type") || "").trim();
+  const message = String(formData.get("message") || "").trim();
 
   if (!name || !contact || !type) {
     status.textContent = "请先填写姓名、联系方式和咨询类型。";
     return;
   }
 
-  status.textContent = "已记录你的咨询信息。正式上线后这里会接入邮箱、表格或企业微信通知。";
-  form.reset();
+  const submitButton = form.querySelector(".form-submit");
+  submitButton.disabled = true;
+  submitButton.textContent = "提交中...";
+  status.textContent = "";
+
+  try {
+    const response = await fetch("/api/lead", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ name, contact, type, message }),
+    });
+    const result = await response.json();
+
+    if (!response.ok) {
+      throw new Error(result.message || "提交失败，请稍后重试。");
+    }
+
+    status.textContent = result.message || "提交成功，我们会尽快联系你。";
+    form.reset();
+  } catch (error) {
+    status.textContent = error.message || "提交失败，请添加微信 AITony9316 咨询。";
+  } finally {
+    submitButton.disabled = false;
+    submitButton.textContent = "提交咨询";
+  }
 });

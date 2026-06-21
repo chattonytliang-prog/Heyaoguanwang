@@ -7,6 +7,7 @@
 - `index.html`：首页结构和页面内容
 - `styles.css`：视觉样式、响应式布局和动画
 - `script.js`：微信号复制、表单提示、滚动入场动画
+- `functions/api/lead.js`：Cloudflare Pages 表单接口，转发官网咨询到飞书机器人
 - `assets/heyao-logo.jpg`：从现有品牌图中裁切的临时 Logo
 - `assets/brand-source.jpg`：原始品牌截图备份
 
@@ -30,7 +31,16 @@ http://localhost:8080
 
 - 高清透明 Logo 或 SVG Logo
 - 微信二维码
-- 表单提交接口
 - 正式隐私政策页面
 - ICP 备案号
 - 国内 CDN 和 HTTPS 证书
+
+## Cloudflare 环境变量
+
+表单通知依赖 Cloudflare Pages 环境变量：
+
+```text
+FEISHU_WEBHOOK
+```
+
+不要把飞书 Webhook 写进前端代码或提交到 GitHub。
